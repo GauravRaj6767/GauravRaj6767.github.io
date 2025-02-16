@@ -30,6 +30,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    text-align: center;
     z-index: 1000;
 }
 
@@ -88,7 +89,10 @@ nav a:hover {
 
 /* Sections & Container */
 section {
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
+    /* Add extra padding at the top */
+    scroll-margin-top: 2rem;
+    /* Adjust this based on your navbar height */
 }
 
 .section-title {
@@ -98,8 +102,9 @@ section {
 }
 
 .container {
-    max-width: 85%;
-    margin: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* About Section */
@@ -179,21 +184,32 @@ section {
 }
 
 /* Social Links Section */
+.social {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .social-links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    /* Centers items */
+    gap: 10px;
+    /* Adds spacing between items */
+    padding: 10px;
 }
 
 .social-link {
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    flex: 1 1 150px;
+    /* Allows shrinking and sets min width */
+    text-align: center;
+    padding: 10px 15px;
     border: 2px solid #333;
     border-radius: 5px;
     transition: background 0.3s, color 0.3s;
     font-weight: 700;
+    white-space: nowrap;
+    /* Prevents text from breaking */
 }
 
 /* Default hover for social links */
@@ -364,6 +380,22 @@ section {
     transition: opacity 0.3s;
 }
 
+.project .project-gif {
+    width: 100%;
+    height: auto !important;
+    /* Remove the fixed height */
+    object-fit: contain !important;
+    /* Show the entire GIF without cropping */
+    object-position: center;
+    /* Optionally center it horizontally */
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
 /* Optional: Change opacity on hover for visual feedback */
 .project a:hover .project-video {
     opacity: 0.9;
@@ -391,4 +423,56 @@ section {
     /* Keep its aspect ratio */
     margin: 0 auto;
     /* Center it horizontally */
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling */
+}
+
+
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+
+    /* Make container widths full-width on mobile */
+    .index-container,
+    .results-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    /* Reduce font sizes for headings if needed */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust the form so the input and button fit better */
+    form input[type="text"],
+    form button {
+        max-width: 100%;
+    }
+
+    /* In the results page, stack columns vertically */
+    .results-columns {
+        flex-direction: column;
+    }
+
+    /* For project cards, ensure they fill the width of their container */
+    .project {
+        max-width: 100%;
+    }
+
+    /* Optional: adjust padding/margins for a more compact layout */
+    .project-content {
+        padding: 0.5rem;
+    }
 }
