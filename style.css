@@ -126,44 +126,6 @@ section {
     font-size: 1rem;
 }
 
-/* Projects Section */
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
-}
-
-.project {
-    background: #fff;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-}
-
-.project img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-content {
-    padding: 1rem;
-}
-
-.project-content h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-.project-content p {
-    font-size: 1rem;
-}
-
 /* Certifications Section */
 .certifications-container {
     display: grid;
@@ -324,15 +286,6 @@ section {
     background: #f39c12;
 }
 
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-}
-
 /* External Link & Icon Styling */
 .external-link {
     display: inline-flex;
@@ -361,30 +314,42 @@ footer {
     color: #f39c12;
     font-size: 1.1rem;
     font-weight: 700;
-    border: 2px solid #f39c12;
-    padding: 0.3rem 0.6rem;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
+    text-decoration: underline;
+    transition: color 0.3s ease-in-out;
 }
 
 .wca-profile:hover {
-    background-color: #f39c12;
-    color: #fff;
+    color: #d35400;
+    text-decoration: none;
+}
+
+/* Projects Section */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .project {
+    width: 100%;
+    max-width: 800px;
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    margin-bottom: 2rem;
-}
+    margin: 0 auto;
 
-.project:hover {
-    transform: translateY(-5px);
 }
 
 .project a {
@@ -415,4 +380,15 @@ footer {
 
 .project-content p {
     font-size: 1rem;
+}
+
+.detail img {
+    display: block;
+    /* Make the image a block-level element */
+    max-width: 85px;
+    /* Or your desired size */
+    height: auto;
+    /* Keep its aspect ratio */
+    margin: 0 auto;
+    /* Center it horizontally */
 }
