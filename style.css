@@ -1,34 +1,34 @@
 /* ========================= */
+/* Reset & Basic Styles */
+*,
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* The main content area grows to fill available space */
-.main-content {
-    flex: 1;
-}
-
-/* Reset and Basic Styles */
-* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html,
 body {
+    height: 100%;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
     background: #f4f4f4;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
 }
 
 a {
@@ -41,7 +41,7 @@ img {
     display: block;
 }
 
-/* Header and Navigation */
+/* Header & Navigation */
 header {
     background: #333;
     color: #fff;
@@ -109,9 +109,7 @@ nav a:hover {
 /* Sections & Container */
 section {
     padding: 5rem 2rem;
-    /* Add extra padding at the top */
     scroll-margin-top: 2rem;
-    /* Adjust this based on your navbar height */
 }
 
 .section-title {
@@ -124,7 +122,6 @@ section {
     max-width: 100%;
     margin: 0 auto;
     padding: 0 15px;
-    box-sizing: border-box;
 }
 
 /* About Section */
@@ -187,8 +184,8 @@ section {
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: background 0.3s;
     font-weight: 700;
+    transition: background 0.3s;
 }
 
 .certification a.btn:hover {
@@ -213,26 +210,21 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* Centers items */
     gap: 10px;
-    /* Adds spacing between items */
     padding: 10px;
 }
 
 .social-link {
     flex: 1 1 150px;
-    /* Allows shrinking and sets min width */
     text-align: center;
     padding: 10px 15px;
     border: 2px solid #333;
     border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
     font-weight: 700;
     white-space: nowrap;
-    /* Prevents text from breaking */
+    transition: background 0.3s, color 0.3s;
 }
 
-/* Default hover for social links */
 .social-link:hover {
     background: #333;
     color: #fff;
@@ -264,7 +256,6 @@ section {
     color: #D14836;
 }
 
-/* Hover states for special social links */
 .social-link.linkedin:hover {
     background: #0077b5;
     color: #fff;
@@ -366,10 +357,6 @@ section {
     gap: 2rem;
 }
 
-.project:hover {
-    transform: translateY(-5px);
-}
-
 .project {
     width: 100%;
     max-width: 800px;
@@ -379,7 +366,10 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     margin: 0 auto;
+}
 
+.project:hover {
+    transform: translateY(-5px);
 }
 
 .project a {
@@ -394,25 +384,21 @@ section {
     transition: opacity 0.3s;
 }
 
+.project a:hover .project-video {
+    opacity: 0.9;
+}
+
 .project .project-gif {
     width: 100%;
     height: auto !important;
-    /* Remove the fixed height */
     object-fit: contain !important;
-    /* Show the entire GIF without cropping */
     object-position: center;
-    /* Optionally center it horizontally */
 }
 
 .project img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-}
-
-/* Optional: Change opacity on hover for visual feedback */
-.project a:hover .project-video {
-    opacity: 0.9;
 }
 
 .project-content {
@@ -430,49 +416,32 @@ section {
 
 .detail img {
     display: block;
-    /* Make the image a block-level element */
     max-width: 85px;
-    /* Or your desired size */
     height: auto;
-    /* Keep its aspect ratio */
     margin: 0 auto;
-    /* Center it horizontally */
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-    /* Prevents horizontal scrolling */
-}
-
+/* Footer */
 .footer {
     text-align: center;
     padding: 1rem;
     background-color: #222;
-    /* Dark background */
     color: #fff;
-    /* White text */
     font-size: 1rem;
     position: relative;
-    /* Ensures it stays at the bottom */
     width: 100%;
 }
 
+/* Repos Header */
 .repos-header {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    /* adjust spacing as needed */
     margin: 1rem 0;
 }
 
-
-
+/* Button Styles */
 .Btn {
     width: 45px;
     height: 45px;
@@ -482,10 +451,9 @@ body {
     border: none;
     background-color: transparent;
     position: relative;
-    /* overflow: hidden; */
     border-radius: 7px;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
 .svgContainer {
@@ -495,10 +463,10 @@ body {
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(0);
     letter-spacing: 0.8px;
     border-radius: 10px;
-    transition: all .3s;
+    transition: all 0.3s;
     border: 1px solid rgba(156, 156, 156, 0.466);
 }
 
@@ -511,7 +479,7 @@ body {
     z-index: -1;
     border-radius: 10px;
     pointer-events: none;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
 .Btn:hover .BG {
@@ -524,22 +492,18 @@ body {
     backdrop-filter: blur(4px);
 }
 
-
-/* Responsive adjustments for mobile devices */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-
     .certifications-container {
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     }
 
-    /* Make container widths full-width on mobile */
     .index-container,
     .results-container {
         max-width: 100%;
         padding: 10px;
     }
 
-    /* Reduce font sizes for headings if needed */
     h1 {
         font-size: 1.8rem;
     }
@@ -548,23 +512,19 @@ body {
         font-size: 1.5rem;
     }
 
-    /* Adjust the form so the input and button fit better */
     form input[type="text"],
     form button {
         max-width: 100%;
     }
 
-    /* In the results page, stack columns vertically */
     .results-columns {
         flex-direction: column;
     }
 
-    /* For project cards, ensure they fill the width of their container */
     .project {
         max-width: 100%;
     }
 
-    /* Optional: adjust padding/margins for a more compact layout */
     .project-content {
         padding: 0.5rem;
     }
